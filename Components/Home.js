@@ -1,6 +1,6 @@
 import {Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {Component} from 'react';
-import SideMenu from 'react-native-side-menu';
+// import SideMenu from 'react-native-side-menu';
 
 export class Home extends Component {
   render() {
@@ -31,7 +31,7 @@ export class Home extends Component {
           }}>
           <TouchableOpacity
             style={{
-              width: '70%',
+              width: '40%',
               backgroundColor: '#39980F',
               padding: 3,
               height: 50,
@@ -45,6 +45,24 @@ export class Home extends Component {
             onPress={() => navigate('Whattsapp')}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 22}}>
               Whattsapp
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: '40%',
+              backgroundColor: 'red',
+              padding: 3,
+              height: 50,
+              borderRadius: 5,
+              // justifyContent: 'center',
+              // alignItems: 'center',
+              // alignSelf: 'center',
+              marginTop: 30,
+              marginLeft: 20,
+            }}
+            onPress={() => navigate('Corona')}>
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
+              Corona Updates
             </Text>
           </TouchableOpacity>
         </View>

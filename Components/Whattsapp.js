@@ -1,20 +1,15 @@
+import * as React from 'react';
 import {
   Text,
   View,
+  StyleSheet,
   FlatList,
   Image,
   TouchableOpacity,
-  SafeAreaView,
-  StatusBar,
+  // StyleSheet,
 } from 'react-native';
-import React, {Component} from 'react';
-import {SwipeListView} from 'react-native-swipe-list-view';
-// import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
-// import Swipeable from 'react-native-swipe-gestures';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
-// import Swipeable from 'react-native-swipeable';
-// import SwipeRow from '@nghinv/react-native-swipe-row';
-// import {SwipeListView} from 'react-native-swipe-list-view';
+import {Swipeable} from 'react-native-gesture-handler';
+
 const Data = [
   {
     key: 0,
@@ -80,174 +75,82 @@ const Data = [
     time: '12:05',
     Image: require('./7.jpg'),
   },
+  {
+    key: 8,
+    name: 'Daniyal 8',
+    id: 'sp19',
+    unread: 2,
+    time: '12:05',
+    Image: require('./7.jpg'),
+  },
 ];
-
-// draw a line after a list itrm
-const Separator = () => (
-  <View
-    style={{
-      flex: 1,
-      height: 1,
-      backgroundColor: '#444',
-      width: '85%',
-      marginLeft: '15%',
-    }}
-  />
-);
-
-// left swip
-const LeftSwipeActions = () => {
+const rightaction = () => {
   return (
-    <View
-      // here if we add property flex 1 it complete
-      style={{
-        flex: 0.2,
-        backgroundColor: 'red',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text
-        style={{
-          color: 'white',
-          fontWeight: '600',
-          fontSize: 18,
-        }}>
-        Delete
-      </Text>
-    </View>
+    <TouchableOpacity>
+      <Text style={styles.delbtn}> Delete </Text>
+    </TouchableOpacity>
   );
 };
-
-const rightSwipeActions = () => {
+const leftaction = () => {
   return (
-    <View
-      style={{
-        flex: 0.4,
-        justifyContent: 'center',
-        flexDirection: 'row',
-      }}>
-      {/* // first btn view */}
-      <View
-        style={{
-          flex: 0.5,
-          backgroundColor: '#708090',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            color: 'white',
-            fontWeight: '600',
-          }}>
-          More
-        </Text>
-      </View>
-
-      {/* view for second btn */}
-      <View
-        style={{
-          flex: 0.5,
-          backgroundColor: '#4169E1',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            color: '#1b1a17',
-            fontWeight: '600',
-            paddingHorizontal: 10,
-            paddingVertical: 20,
-          }}>
-          Archive
-        </Text>
-      </View>
-    </View>
+    <TouchableOpacity>
+      <Text style={styles.editbtn}> Edit </Text>
+    </TouchableOpacity>
   );
 };
-// complete swips
-const swipeFromLeftOpen = () => {
-  alert('Swipe from left');
-};
-const swipeFromRightOpen = () => {
-  alert('Swipe from right');
-};
-
-const ListItem = text => (
-  <Swipeable
-    renderLeftActions={LeftSwipeActions}
-    renderRightActions={rightSwipeActions}
-    // onSwipeableRightOpen={swipeFromRightOpen}
-    // onSwipeableLeftOpen={swipeFromLeftOpen}
-  >
-    <View
-      style={{
-        backgroundColor: '#B3DAC6',
-        width: '100%',
-        flex: 1,
-        height: 50,
-        marginBottom: 5,
-        flexDirection: 'row',
-      }}>
-      <View style={{flex: 0.15}}>
-        <Image
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center',
-            marginTop: 5,
-          }}
-          source={item.Image}
-        />
-      </View>
-      <View style={{backgroundColor: '#F4F8F6', flex: 0.6}}>
-        <Text style={{color: '#111', fontSize: 18, marginLeft: 3}}>
-          {item.name}{' '}
-        </Text>
-      </View>
-      <View
-        style={{
-          flex: 0.2,
-          justifyContent: 'center',
-          alignItems: 'center',
-          alignSelf: 'center',
-        }}>
-        <Text style={{fontWeight: '700'}}> {item.unread} </Text>
-        <Text style={{fontStyle: 'italic'}}> {item.time} </Text>
-      </View>
-    </View>
-  </Swipeable>
-);
-
-// export default class Whattsapp extends Component {
-//   render() {
-//     return (
-//       <View>
-//         <Text>whattsapp</Text>
-
-//       </View>
-//     );
-//   }
-// }
-
-const Swip = () => {
+export default function Whattsapp() {
   return (
-    <>
-      <StatusBar />
-      <SafeAreaView>
-        <Text>Whattsapp</Text>
-        <FlatList
-          numColumns={1}
-          data={Data}
-          keyExtractor={item => item.key}
-          renderItem={({item}) => <ListItem {...item} />}
-          ItemSeparatorComponent={() => <Separator />}
-        />
-      </SafeAreaView>
-    </>
+    <View style={{flex: 1}}>
+      <FlatList
+        numColumns={1}
+        keyExtractor={item => item.key}
+        data={Data}
+        renderItem={({item}) => (
+          <TouchableOpacity>
+            <View
+              style={{
+                backgroundColor: '#B3DAC6',
+                width: '100%',
+                flex: 1,
+                height: 50,
+                marginBottom: 5,
+                flexDirection: 'row',
+              }}>
+              <View style={{flex: 0.15}}>
+                <Image
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 50,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                    marginTop: 5,
+                  }}
+                  source={item.Image}
+                />
+              </View>
+              <View style={{backgroundColor: '#F4F8F6', flex: 0.6}}>
+                <Text style={{color: '#111', fontSize: 18, marginLeft: 3}}>
+                  {item.name}{' '}
+                </Text>
+              </View>
+              <View
+                style={{
+                  flex: 0.2,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  alignSelf: 'center',
+                }}>
+                <Text style={{fontWeight: '700'}}> {item.unread} </Text>
+                <Text style={{fontStyle: 'italic'}}> {item.time} </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
+    </View>
   );
-};
+}
 
-export default Swip;
+const styles = StyleSheet.create({});

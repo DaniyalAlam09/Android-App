@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import axios from 'axios';
 
 export default class Signup extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class Signup extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 0.25}}>
-          <Image style={styl.logo} source={require('./Google.jpg')} />
+          <Image style={styl.logo} source={require('./Whattsapp.png')} />
         </View>
         <View style={{flex: 0.5}}>
           <TextInput

@@ -6,6 +6,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Whattsapp from './Components/Whattsapp';
 import Home from './Components/Home';
+import Corona from './Components/Corona';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default class logo extends React.Component {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Whattsapp" component={Whattsapp} />
+          <Stack.Screen name="Corona" component={Corona} />
         </Stack.Navigator>
       </NavigationContainer>
     );

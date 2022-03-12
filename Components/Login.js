@@ -26,7 +26,7 @@ export default class Login extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 0.3}}>
-          <Image style={styl.logo} source={require('./Google.jpg')} />
+          <Image style={styl.logo} source={require('./Whattsapp.png')} />
         </View>
         <View style={{flex: 0.4}}>
           <TextInput

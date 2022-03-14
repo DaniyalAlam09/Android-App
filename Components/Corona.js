@@ -16,44 +16,40 @@ const Corona = () => {
   const [data, setData] = React.useState([]);
   const [search, setSearch] = useState('');
   const [filterData, setFilterData] = React.useState([]);
-  const [masterData, setMasterData] = React.useState([]);
+  const [masterData, setmasterData] = React.useState([]);
 
-  useEffect(() => {
-    setFilterdata(Cases), setMasterData(Cases);
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   // const [loading, setLoading] = React.useState(false);
 
-  const Cases = () => {
-    React.useEffect(() => {
-      axios
-        .get('https://api.covid19api.com/summary')
-        .then(function (response) {
-          setDataGlobal(response.data.Global);
-          setData(response.data.Countries);
-          // setLoading(false);
-        })
-        .then(function (responseJson) {
-          setFilterData(responseJson);
-          setMasterData(responseJson);
-          // setLoading(false);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    });
-  };
+  React.useEffect(() => {
+    axios
+      .get('https://api.covid19api.com/summary')
+      .then(function (response) {
+        console.log(response.data);
+        setDataGlobal(response.data.Global);
+        setData(response.data.Countries);
+        setFilterData(response.data.Countries),
+          setmasterData(response.data.Countries);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   const searchFilter = text => {
     if (text) {
-      const newData = masterdata.filter(item => {
+      const newData = masterData.filter(item => {
         const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
-      setFilterdata(newData);
+      setFilterData(newData);
       setSearch(text);
     } else {
-      setFilterdata(masterdata);
+      setFilterData(masterData);
       setSearch(text);
     }
   };
@@ -92,7 +88,7 @@ const Corona = () => {
             }}
           />
           <FlatList
-            data={filterData}
+            data={data}
             renderItem={({item}) => (
               <View style={styles.single}>
                 <View style={styles.countryWrapper}>

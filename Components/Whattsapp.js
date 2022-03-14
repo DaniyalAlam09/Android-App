@@ -9,6 +9,7 @@ import {
   // StyleSheet,
 } from 'react-native';
 import {Swipeable} from 'react-native-gesture-handler';
+// import {Home,pro} from '../Components/Images'
 
 const Data = [
   {
@@ -106,46 +107,50 @@ export default function Whattsapp() {
         keyExtractor={item => item.key}
         data={Data}
         renderItem={({item}) => (
-          <TouchableOpacity>
-            <View
-              style={{
-                backgroundColor: '#B3DAC6',
-                width: '100%',
-                flex: 1,
-                height: 50,
-                marginBottom: 5,
-                flexDirection: 'row',
-              }}>
-              <View style={{flex: 0.15}}>
-                <Image
+          <TouchableOpacity
+            renderLeftActions={leftaction}
+            renderRightActions={rightaction}>
+            <Swipeable>
+              <View
+                style={{
+                  backgroundColor: '#B3DAC6',
+                  width: '100%',
+                  flex: 1,
+                  height: 50,
+                  marginBottom: 5,
+                  flexDirection: 'row',
+                }}>
+                <View style={{flex: 0.15}}>
+                  <Image
+                    style={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: 50,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      alignSelf: 'center',
+                      marginTop: 5,
+                    }}
+                    source={item.Image}
+                  />
+                </View>
+                <View style={{backgroundColor: '#F4F8F6', flex: 0.6}}>
+                  <Text style={{color: '#111', fontSize: 18, marginLeft: 3}}>
+                    {item.name}{' '}
+                  </Text>
+                </View>
+                <View
                   style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: 50,
+                    flex: 0.2,
                     justifyContent: 'center',
                     alignItems: 'center',
                     alignSelf: 'center',
-                    marginTop: 5,
-                  }}
-                  source={item.Image}
-                />
+                  }}>
+                  <Text style={{fontWeight: '700'}}> {item.unread} </Text>
+                  <Text style={{fontStyle: 'italic'}}> {item.time} </Text>
+                </View>
               </View>
-              <View style={{backgroundColor: '#F4F8F6', flex: 0.6}}>
-                <Text style={{color: '#111', fontSize: 18, marginLeft: 3}}>
-                  {item.name}{' '}
-                </Text>
-              </View>
-              <View
-                style={{
-                  flex: 0.2,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  alignSelf: 'center',
-                }}>
-                <Text style={{fontWeight: '700'}}> {item.unread} </Text>
-                <Text style={{fontStyle: 'italic'}}> {item.time} </Text>
-              </View>
-            </View>
+            </Swipeable>
           </TouchableOpacity>
         )}
       />
@@ -153,4 +158,23 @@ export default function Whattsapp() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  delbtn: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    backgroundColor: 'red',
+    padding: 20,
+    textAlign: 'center',
+    marginTop: 20,
+  },
+  editbtn: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    backgroundColor: 'orange',
+    padding: 20,
+    textAlign: 'center',
+    marginTop: 20,
+  },
+});

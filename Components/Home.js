@@ -17,7 +17,7 @@ export class Home extends Component {
               alignSelf: 'center',
               marginTop: 40,
             }}
-            source={require('./Welcome.webp')}
+            source={require('./Images/Welcome.webp')}
           />
         </View>
         <View

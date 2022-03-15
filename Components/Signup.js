@@ -30,7 +30,7 @@ export default class Signup extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 0.25}}>
-          <Image style={styl.logo} source={require('./Whattsapp.png')} />
+          <Image style={styl.logo} source={require('./Images/Whattsapp.png')} />
         </View>
         <View style={{flex: 0.5}}>
           <TextInput

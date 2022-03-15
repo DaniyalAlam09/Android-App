@@ -6,7 +6,6 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  // StyleSheet,
 } from 'react-native';
 import {Swipeable} from 'react-native-gesture-handler';
 // import {Home,pro} from '../Components/Images'
@@ -18,7 +17,7 @@ const Data = [
     id: 'sp19',
     unread: 1,
     time: '11:09',
-    Image: require('./Me.jpg'),
+    Image: require('./Images/Me.jpg'),
   },
   {
     key: 1,
@@ -26,7 +25,7 @@ const Data = [
     id: 'sp19',
     unread: 2,
     time: '1:20',
-    Image: require('./1.jpg'),
+    Image: require('./Images/1.jpg'),
   },
   {
     key: 2,
@@ -34,7 +33,7 @@ const Data = [
     id: 'sp19',
     unread: 3,
     time: '12:55',
-    Image: require('./2.jpg'),
+    Image: require('./Images/2.jpg'),
   },
   {
     key: 3,
@@ -42,7 +41,7 @@ const Data = [
     id: 'sp19',
     unread: 12,
     time: '9:42',
-    Image: require('./3.jpg'),
+    Image: require('./Images/3.jpg'),
   },
   {
     key: 4,
@@ -50,7 +49,7 @@ const Data = [
     id: 'sp19',
     unread: 15,
     time: '2:09',
-    Image: require('./4.jpg'),
+    Image: require('./Images/4.jpg'),
   },
   {
     key: 5,
@@ -58,7 +57,7 @@ const Data = [
     id: 'sp19',
     unread: 12,
     time: '1:49',
-    Image: require('./5.jpg'),
+    Image: require('./Images/5.jpg'),
   },
   {
     key: 6,
@@ -66,7 +65,7 @@ const Data = [
     id: 'sp19',
     unread: 6,
     time: '5:12',
-    Image: require('./6.jpg'),
+    Image: require('./Images/6.jpg'),
   },
   {
     key: 7,
@@ -74,7 +73,7 @@ const Data = [
     id: 'sp19',
     unread: 2,
     time: '12:05',
-    Image: require('./7.jpg'),
+    Image: require('./Images/7.jpg'),
   },
   {
     key: 8,
@@ -82,7 +81,7 @@ const Data = [
     id: 'sp19',
     unread: 2,
     time: '12:05',
-    Image: require('./7.jpg'),
+    Image: require('./Images/7.jpg'),
   },
 ];
 const rightaction = () => {
@@ -93,7 +92,6 @@ const rightaction = () => {
         justifyContent: 'center',
         flexDirection: 'row',
       }}>
-      {/* // first btn view */}
       <View
         style={{
           flex: 1,
@@ -106,7 +104,7 @@ const rightaction = () => {
             color: 'white',
             fontWeight: '600',
           }}>
-          More
+          Archive
         </Text>
       </View>
     </View>
@@ -115,7 +113,6 @@ const rightaction = () => {
 const leftaction = () => {
   return (
     <View
-      // here if we add property flex 1 it complete
       style={{
         flex: 0.2,
         backgroundColor: 'red',

@@ -107,10 +107,10 @@ export default function Whattsapp() {
         keyExtractor={item => item.key}
         data={Data}
         renderItem={({item}) => (
-          <TouchableOpacity
-            renderLeftActions={leftaction}
-            renderRightActions={rightaction}>
-            <Swipeable>
+          <TouchableOpacity>
+            <Swipeable
+              renderLeftActions={leftaction}
+              renderRightActions={rightaction}>
               <View
                 style={{
                   backgroundColor: '#B3DAC6',

@@ -174,13 +174,5 @@ const styles = StyleSheet.create({
   },
   infoWrapper: {
     flex: 0.7,
-    // justifyContent:"center"
   },
-  // infoCases:{
-  //     // flexDirection:"row"
-
-  // },
-  // infoDeaths:{
-
-  // }
 });

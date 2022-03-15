@@ -23,7 +23,6 @@ export class Home extends Component {
         <View
           style={{
             flex: 1,
-            flexDirection: 'row',
             marginTop: 150,
             justifyContent: 'center',
             alignItems: 'center',
@@ -31,7 +30,7 @@ export class Home extends Component {
           }}>
           <TouchableOpacity
             style={{
-              width: '40%',
+              width: '50%',
               backgroundColor: '#39980F',
               padding: 3,
               height: 50,
@@ -49,20 +48,38 @@ export class Home extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={{
-              width: '40%',
+              width: '50%',
               backgroundColor: 'red',
               padding: 3,
               height: 50,
               borderRadius: 5,
-              // justifyContent: 'center',
-              // alignItems: 'center',
-              // alignSelf: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'center',
               marginTop: 30,
               marginLeft: 20,
             }}
             onPress={() => navigate('Corona')}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
               Corona Updates
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: '50%',
+              backgroundColor: 'blue',
+              padding: 3,
+              height: 50,
+              borderRadius: 5,
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'center',
+              marginTop: 30,
+              marginLeft: 20,
+            }}
+            onPress={() => navigate('Setting')}>
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
+              Settings
             </Text>
           </TouchableOpacity>
         </View>

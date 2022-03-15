@@ -87,16 +87,50 @@ const Data = [
 ];
 const rightaction = () => {
   return (
-    <TouchableOpacity>
-      <Text style={styles.delbtn}> Delete </Text>
-    </TouchableOpacity>
+    <View
+      style={{
+        flex: 0.2,
+        justifyContent: 'center',
+        flexDirection: 'row',
+      }}>
+      {/* // first btn view */}
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: '#708090',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            color: 'white',
+            fontWeight: '600',
+          }}>
+          More
+        </Text>
+      </View>
+    </View>
   );
 };
 const leftaction = () => {
   return (
-    <TouchableOpacity>
-      <Text style={styles.editbtn}> Edit </Text>
-    </TouchableOpacity>
+    <View
+      // here if we add property flex 1 it complete
+      style={{
+        flex: 0.2,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Text
+        style={{
+          color: 'white',
+          fontWeight: '600',
+          fontSize: 18,
+        }}>
+        Delete
+      </Text>
+    </View>
   );
 };
 export default function Whattsapp() {

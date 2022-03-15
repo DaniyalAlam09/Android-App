@@ -7,7 +7,7 @@ export default function Setting() {
   const theme = useContext(themeContext);
   return (
     <View style={[styles.container, {backgroundColor: theme.background}]}>
-      <Text style={[styles.text, {color: theme.color}]}>Setting</Text>
+      <Text style={[styles.text, {color: theme.color}]}>Enable Dark Mode</Text>
       <Switch
         value={mode}
         onValueChange={value => {
@@ -15,7 +15,7 @@ export default function Setting() {
           EventRegister.emit('changeTheme', value);
         }}
       />
-      <Button title="View Profile" />
+      {/* <Button title="View Profile" /> */}
     </View>
   );
 }

@@ -14,6 +14,7 @@ import Corona from './Components/Corona';
 import Setting from './Components/Setting';
 import themeContext from './Components/ThemeContext';
 import theme from './Components/theme';
+import Firebase from './Components/Firebase';
 import {EventRegister} from 'react-native-event-listeners';
 
 import {LogBox} from 'react-native';
@@ -38,8 +39,8 @@ export default function App() {
   return (
     <themeContext.Provider value={mode == true ? theme.dark : theme.light}>
       <NavigationContainer theme={mode == true ? DarkTheme : DefaultTheme}>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home} />
+        <Stack.Navigator initialRouteName="Firebase">
+          <Stack.Screen name="Firebase" component={Firebase} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Whattsapp" component={Whattsapp} />

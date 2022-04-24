@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@firebase/database": "^0.12.8",
+    "@react-native-firebase/app": "^14.7.0",
+    "@react-native-firebase/database": "^14.7.0",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
@@ -22,6 +25,7 @@
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "^4.1.2",
     "react-native-screens": "^3.13.1",
+    "react-native-sqlite-storage": "^6.0.1",
     "react-navigation-stack": "^2.10.4"
   },
   "devDependencies": {

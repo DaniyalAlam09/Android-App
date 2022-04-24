@@ -1,5 +1,5 @@
 import {Text, View, TouchableOpacity, Image} from 'react-native';
-import React, {Component} from 'react';
+// import React, {Component} from 'react';
 // import SideMenu from 'react-native-side-menu';
 
 export class Home extends Component {
@@ -46,6 +46,7 @@ export class Home extends Component {
               Whattsapp
             </Text>
           </TouchableOpacity>
+
           <TouchableOpacity
             style={{
               width: '50%',
@@ -64,6 +65,25 @@ export class Home extends Component {
               Corona Updates
             </Text>
           </TouchableOpacity>
+
+          {/* <TouchableOpacity
+            style={{
+              width: '50%',
+              backgroundColor: 'purple',
+              padding: 3,
+              height: 50,
+              borderRadius: 5,
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'center',
+              marginTop: 30,
+              marginLeft: 20,
+            }}
+            onPress={() => navigate('Firebase')}>
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
+              Firebase
+            </Text>
+          </TouchableOpacity> */}
           <TouchableOpacity
             style={{
               width: '50%',
